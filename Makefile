@@ -4,7 +4,10 @@ main: main.o funcs.o
 tests: tests.o funcs.o
 	g++ -o tests tests.o funcs.o
 
+test-ascii: test-ascii.o
+	g++ -o test-ascii test-ascii.o
 
+test-ascii.o: test-ascii.cpp
 
 funcs.o: funcs.cpp funcs.h
 
