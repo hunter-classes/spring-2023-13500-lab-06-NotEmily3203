@@ -1,8 +1,8 @@
-main: main.o caesar.o
-	g++ -o main main.o caesar.o
+main: main.o caesar.o vigenere.o
+	g++ -o main main.o caesar.o vigenere.o
 
-tests: tests.o caesar.o
-	g++ -o tests tests.o caesar.o
+tests: tests.o caesar.o vigenere.o
+	g++ -o tests tests.o caesar.o vigenere.o
 
 test-ascii: test-ascii.o
 	g++ -o test-ascii test-ascii.o
@@ -10,7 +10,12 @@ test-ascii: test-ascii.o
 caesar: caesar.o
 	g++ -o caesar caesar.o
 
-caesar.o: caesar.cpp
+vigenere: vigenere.o
+	g++ -o vigenere vigenere.o
+
+caesar.o: caesar.cpp caesar.h
+
+vigenere.o: vigenere.cpp vigenere.h
 
 test-ascii.o: test-ascii.cpp
 
